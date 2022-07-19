@@ -35,11 +35,14 @@ struct AddHabit: View {
               ForEach(icons, id: \.self) { symbol in
                 VStack {
                   Image(systemName: symbol)
+                    .foregroundColor(icon == symbol ? .blue : .black)
                     .font(Font.system(.largeTitle).bold())
                     .padding()
                     .frame(width: 100, height: 100)
                     .onTapGesture {
-                      icon = symbol
+                      withAnimation {
+                        icon = symbol                        
+                      }
                     }
                 }
               }
