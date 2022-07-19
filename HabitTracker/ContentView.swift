@@ -19,8 +19,8 @@ struct ContentView: View {
             ForEach(listOfHabits.habits) { habit in
               HStack {
                 HStack {
-                  Image(systemName: "book")
-                  Text("habit")
+                  Image(systemName: habit.icon)
+                  Text(habit.title)
                     .bold()
                 }
                 Spacer()
@@ -46,7 +46,7 @@ struct ContentView: View {
           .foregroundColor(.black)
         }
         .sheet(isPresented: $showingAddHabit) {
-          Text("holi!")
+          AddHabit(habits: listOfHabits)
         }
         
       }
