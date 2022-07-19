@@ -16,23 +16,8 @@ struct ContentView: View {
       NavigationView {
         Group {
           List {
-            ForEach(listOfHabits.habits) { habit in
-              HStack {
-                HStack {
-                  Image(systemName: habit.icon)
-                  Text(habit.title)
-                    .bold()
-                }
-                Spacer()
-                Button("Complete") {
-                  
-                }
-                .foregroundColor(.white)
-                .padding(8)
-                .background(Color.accentColor)
-                .cornerRadius(8)
-                .font(.callout)
-              }
+            ForEach(listOfHabits.NotCompletedHabits) { habit in
+              HabitsView(habit: habit)
             }
           }
         }

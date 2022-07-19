@@ -55,7 +55,7 @@ struct AddHabit: View {
       .toolbar {
         Button("Done") {
           let habit = HabitItem(title: title, description: description, icon: icon)
-          habits.habits.append(habit)
+          habits.NotCompletedHabits.append(habit)
           dismiss()
         }
     }

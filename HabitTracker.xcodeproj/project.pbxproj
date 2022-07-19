@@ -14,6 +14,7 @@
 		18E7253F28870D2F00791C70 /* HabitItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E7253E28870D2F00791C70 /* HabitItem.swift */; };
 		18E7254128870D9500791C70 /* Habits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E7254028870D9500791C70 /* Habits.swift */; };
 		18E72544288725CC00791C70 /* AddHabit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E72543288725CC00791C70 /* AddHabit.swift */; };
+		18E725462887714700791C70 /* HabitsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E725452887714700791C70 /* HabitsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		18E7253E28870D2F00791C70 /* HabitItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitItem.swift; sourceTree = "<group>"; };
 		18E7254028870D9500791C70 /* Habits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habits.swift; sourceTree = "<group>"; };
 		18E72543288725CC00791C70 /* AddHabit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHabit.swift; sourceTree = "<group>"; };
+		18E725452887714700791C70 /* HabitsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				18E72543288725CC00791C70 /* AddHabit.swift */,
+				18E725452887714700791C70 /* HabitsView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -162,6 +165,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18E725462887714700791C70 /* HabitsView.swift in Sources */,
 				18E72532288707EB00791C70 /* ContentView.swift in Sources */,
 				18E72544288725CC00791C70 /* AddHabit.swift in Sources */,
 				18E72530288707EB00791C70 /* HabitTrackerApp.swift in Sources */,

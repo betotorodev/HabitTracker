@@ -8,5 +8,6 @@
 import Foundation
 
 class Habits: ObservableObject {
-  @Published var habits = [HabitItem]()
+  @Published var NotCompletedHabits = [HabitItem]()
+  @Published var completedHabits = [HabitItem]()
 }
