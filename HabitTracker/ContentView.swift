@@ -8,9 +8,48 @@
 import SwiftUI
 
 struct ContentView: View {
+  
+  @StateObject var listOfHabits = Habits()
+  @State private var showingAddHabit = false
+  
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+      NavigationView {
+        Group {
+          List {
+            ForEach(listOfHabits.habits) { habit in
+              HStack {
+                HStack {
+                  Image(systemName: "book")
+                  Text("habit")
+                    .bold()
+                }
+                Spacer()
+                Button("Complete") {
+                  
+                }
+                .foregroundColor(.white)
+                .padding(8)
+                .background(Color.accentColor)
+                .cornerRadius(8)
+                .font(.callout)
+              }
+            }
+          }
+        }
+        .navigationTitle("Habit tracker")
+        .toolbar {
+          Button {
+            showingAddHabit.toggle()
+          } label: {
+            Image(systemName: "plus")
+          }
+          .foregroundColor(.black)
+        }
+        .sheet(isPresented: $showingAddHabit) {
+          Text("holi!")
+        }
+        
+      }
     }
 }
 
