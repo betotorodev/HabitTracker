@@ -56,12 +56,16 @@ struct ContentView: View {
       }
       .navigationTitle("Habit tracker")
       .toolbar {
-        Button {
-          showingAddHabit.toggle()
-        } label: {
-          Image(systemName: "plus")
+        HStack {
+          EditButton()
+            .foregroundColor(.black)
+          Button {
+            showingAddHabit.toggle()
+          } label: {
+            Image(systemName: "plus")
+          }
+          .foregroundColor(.black)
         }
-        .foregroundColor(.black)
       }
       .sheet(isPresented: $showingAddHabit) {
         AddHabit(habits: listOfHabits)
