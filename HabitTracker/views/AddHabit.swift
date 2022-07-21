@@ -27,7 +27,9 @@ struct AddHabit: View {
         VStack {
           Section {
             TextField("title", text: $title)
+              .padding(8)
             TextField("description", text: $description)
+              .padding(8)
           }
           
           Section("Choose an icon") {
