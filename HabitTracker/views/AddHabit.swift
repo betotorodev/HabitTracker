@@ -42,7 +42,7 @@ struct AddHabit: View {
                     .padding()
                     .frame(width: 100, height: 100)
                     .onTapGesture {
-                      withAnimation {
+                      withAnimation(.easeIn(duration: 0.1)) {
                         icon = symbol                        
                       }
                     }
