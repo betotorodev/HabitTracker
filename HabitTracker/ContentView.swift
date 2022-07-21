@@ -12,6 +12,14 @@ struct ContentView: View {
   @StateObject var listOfHabits = Habits()
   @State private var showingAddHabit = false
   
+  func removeNotCompletedTask(at offsets: IndexSet) {
+    listOfHabits.NotCompletedHabits.remove(atOffsets: offsets)
+  }
+  
+  func removeCompletedTask(at offsets: IndexSet) {
+    listOfHabits.completedHabits.remove(atOffsets: offsets)
+  }
+  
   var body: some View {
     NavigationView {
       Group {
@@ -30,6 +38,7 @@ struct ContentView: View {
               ForEach(listOfHabits.NotCompletedHabits) { habit in
                 HabitsView(habit: habit, listOfHabits: listOfHabits, typeOfAction: TypeOfAction.Complete)
               }
+              .onDelete(perform: removeNotCompletedTask)
             }
           }
           
@@ -38,6 +47,7 @@ struct ContentView: View {
               ForEach(listOfHabits.completedHabits) { habit in
                 HabitsView(habit: habit, listOfHabits: listOfHabits, typeOfAction: TypeOfAction.UnComplete)
               }
+              .onDelete(perform: removeCompletedTask)
             }
           }
           
