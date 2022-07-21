@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18AE0D222889AF20000D624B /* TypeOfAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AE0D212889AF20000D624B /* TypeOfAction.swift */; };
 		18E72530288707EB00791C70 /* HabitTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E7252F288707EB00791C70 /* HabitTrackerApp.swift */; };
 		18E72532288707EB00791C70 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E72531288707EB00791C70 /* ContentView.swift */; };
 		18E72534288707EE00791C70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18E72533288707EE00791C70 /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		18AE0D212889AF20000D624B /* TypeOfAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeOfAction.swift; sourceTree = "<group>"; };
 		18E7252C288707EB00791C70 /* HabitTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HabitTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18E7252F288707EB00791C70 /* HabitTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitTrackerApp.swift; sourceTree = "<group>"; };
 		18E72531288707EB00791C70 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 			children = (
 				18E7253E28870D2F00791C70 /* HabitItem.swift */,
 				18E7254028870D9500791C70 /* Habits.swift */,
+				18AE0D212889AF20000D624B /* TypeOfAction.swift */,
 			);
 			path = data;
 			sourceTree = "<group>";
@@ -169,6 +172,7 @@
 				18E72532288707EB00791C70 /* ContentView.swift in Sources */,
 				18E72544288725CC00791C70 /* AddHabit.swift in Sources */,
 				18E72530288707EB00791C70 /* HabitTrackerApp.swift in Sources */,
+				18AE0D222889AF20000D624B /* TypeOfAction.swift in Sources */,
 				18E7254128870D9500791C70 /* Habits.swift in Sources */,
 				18E7253F28870D2F00791C70 /* HabitItem.swift in Sources */,
 			);

@@ -10,8 +10,19 @@ import SwiftUI
 struct HabitsView: View {
   
   let habit: HabitItem
+  @ObservedObject var listOfHabits: Habits
+  let typeOfAction: TypeOfAction
+  
+  func removeAndAddItem(habitsToRemove: inout [HabitItem]) {
+    if let item = habitsToRemove.firstIndex(of: habit) {
+      habitsToRemove.remove(at: item)
+    }
+  }
   
   var body: some View {
+    
+    let isComplete = typeOfAction == TypeOfAction.Complete
+    
     HStack {
       HStack {
         Image(systemName: habit.icon)
@@ -19,12 +30,22 @@ struct HabitsView: View {
           .bold()
       }
       Spacer()
-      Button("Complete") {
-        
+      Button(isComplete ? "Complete" : "Completed") {
+        if isComplete {
+          withAnimation {
+            removeAndAddItem(habitsToRemove: &listOfHabits.NotCompletedHabits)
+            listOfHabits.completedHabits.append(habit)
+          }
+        } else {
+          withAnimation {
+            removeAndAddItem(habitsToRemove: &listOfHabits.completedHabits)
+            listOfHabits.NotCompletedHabits.append(habit)
+          }
+        }
       }
       .foregroundColor(.white)
       .padding(8)
-      .background(Color.accentColor)
+      .background(isComplete ? Color.accentColor : Color.green)
       .cornerRadius(8)
       .font(.callout)
     }
@@ -33,6 +54,6 @@ struct HabitsView: View {
 
 struct HabitsView_Previews: PreviewProvider {
   static var previews: some View {
-    HabitsView(habit: HabitItem(title: "habit", description: "description", icon: "book"))
+    HabitsView(habit: HabitItem(title: "habit", description: "description", icon: "book"), listOfHabits: Habits(), typeOfAction: TypeOfAction.Complete)
   }
 }

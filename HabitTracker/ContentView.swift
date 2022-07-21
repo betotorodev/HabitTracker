@@ -12,34 +12,57 @@ struct ContentView: View {
   @StateObject var listOfHabits = Habits()
   @State private var showingAddHabit = false
   
-    var body: some View {
-      NavigationView {
-        Group {
-          List {
-            ForEach(listOfHabits.NotCompletedHabits) { habit in
-              HabitsView(habit: habit)
+  var body: some View {
+    NavigationView {
+      Group {
+        
+        List {
+          if listOfHabits.NotCompletedHabits.isEmpty {
+            HStack {
+              Spacer()
+              Text("Add a task")
+                .foregroundColor(.secondary)
+                .font(.subheadline)
+              Spacer()
+            }
+          } else {
+            Section("Task to complete") {
+              ForEach(listOfHabits.NotCompletedHabits) { habit in
+                HabitsView(habit: habit, listOfHabits: listOfHabits, typeOfAction: TypeOfAction.Complete)
+              }
             }
           }
-        }
-        .navigationTitle("Habit tracker")
-        .toolbar {
-          Button {
-            showingAddHabit.toggle()
-          } label: {
-            Image(systemName: "plus")
+          
+          if !listOfHabits.completedHabits.isEmpty {
+            Section("Task completed") {
+              ForEach(listOfHabits.completedHabits) { habit in
+                HabitsView(habit: habit, listOfHabits: listOfHabits, typeOfAction: TypeOfAction.UnComplete)
+              }
+            }
           }
-          .foregroundColor(.black)
-        }
-        .sheet(isPresented: $showingAddHabit) {
-          AddHabit(habits: listOfHabits)
+          
         }
         
       }
+      .navigationTitle("Habit tracker")
+      .toolbar {
+        Button {
+          showingAddHabit.toggle()
+        } label: {
+          Image(systemName: "plus")
+        }
+        .foregroundColor(.black)
+      }
+      .sheet(isPresented: $showingAddHabit) {
+        AddHabit(habits: listOfHabits)
+      }
+      
     }
+  }
 }
 
 struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+  static var previews: some View {
+    ContentView()
+  }
 }
